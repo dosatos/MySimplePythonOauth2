@@ -1,10 +1,11 @@
 [tool.poetry]
-name = "MySimplePythonOauth2"
+name = "my_simple_python_oauth2"
 version = "0.1.0"
 description = ""
 authors = ["Your Name <you@example.com>"]
 readme = "README.md"
-packages = [{include = "MySimplePythonOauth2"}]
+repository = "https://github.com/dosatos/MySimplePythonOauth2"
+packages = [{include = "MySimplePythonOauth2", from = "src"}]
 
 [tool.poetry.dependencies]
 python = "^3.9"
