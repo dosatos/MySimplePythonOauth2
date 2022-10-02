@@ -15,6 +15,7 @@ from accounts.models.api import (
 )
 from accounts.users import get, create, login
 from auth_token.models import TokenType, Token
+from utils import token_encoder
 
 TEST_USERNAME = 'username@gmail.com'
 TEST_CORRECT_PASSWORD = 'correct_password'
@@ -79,9 +80,10 @@ def test_login(
     get_user_cb: MagicMock, encode_cb: MagicMock, validate_password: MagicMock
 ):
     token = login(
-        LoginCredentialsRequest(
+        credentials=LoginCredentialsRequest(
             username='username@gmail.com', password=TEST_CORRECT_PASSWORD
-        )
+        ),
+        token_encoder=token_encoder,
     )
     get_user_cb.assert_called_once_with(TEST_USERNAME)
     encode_cb.assert_called_once_with({'username': TEST_USERNAME})

@@ -10,6 +10,20 @@ from auth_token.models import TokenType
 TEST_USERNAME = 'example@gmail.com'
 TEST_PASSWORD = 'password'
 
+from auth_token.token import TokenEncoder
+
+with open('./test/test_jwt-key', encoding='utf-8') as fh:
+    PRIVATE_KEY = fh.read()
+
+with open('./test/test_jwt-key.pub', encoding='utf-8') as fh:
+    PUBLIC_KEY = fh.read()
+
+token_encoder = TokenEncoder(
+    algorithm='RS256',
+    encrypt_key=PRIVATE_KEY,
+    decrypt_key=PUBLIC_KEY,
+)
+
 
 @pytest.fixture
 def setup_database():
@@ -30,9 +44,9 @@ def test_create_and_get(setup_database):
     token = login(LoginCredentialsRequest(
         username=create_user_request.username,
         password=create_user_request.password
-    ))
+    ), token_encoder)
     assert token.token_type == TokenType.BEARER
     assert jwt.decode(token.access_token, token.public_key, algorithms=['RS256'])
 
     with pytest.raises(InvalidCredentials):
-        login(LoginCredentialsRequest(username=create_user_request.username, password='incorrect_pass'))
+        login(LoginCredentialsRequest(username=create_user_request.username, password='incorrect_pass'), token_encoder)
