@@ -1,14 +1,17 @@
+"""Exception classes for the auth_token module"""
+
+
 class ClientAuthError(Exception):
-    pass
+    """When Authentication failed due to Client's error"""
 
 
 class InvalidToken(ClientAuthError):
-    pass
+    """When invalid token was provided"""
 
 
 class TokenExpired(ClientAuthError):
-    pass
+    """When token was expired"""
 
 
 class UnsupportedAlgorithm(ClientAuthError):
-    pass
+    """When an unsupported crypto algorithm was used to encrypt/decrypt the token"""

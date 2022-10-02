@@ -11,6 +11,7 @@ python = "^3.9"
 passlib = {extras = ["bcrypt"], version = "^1.7.4"}
 python-dotenv = "^0.21.0"
 PyJWT = {extras = ["crypto"], version = "^2.5.0"}
+unify = "^0.5"
 
 
 [tool.poetry.group.dev.dependencies]

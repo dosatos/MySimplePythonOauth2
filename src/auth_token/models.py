@@ -10,4 +10,4 @@ class Token(NamedTuple):
 class DecryptToken(NamedTuple):
     value: str
     algorithm: str
-    decrypt_key: Optional[str]
+    decrypt_key: str
