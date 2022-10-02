@@ -4,6 +4,9 @@ RUN_TESTS = PYTHONPATH=$(CODE_DIR) poetry run pytest --verbosity=2 --showlocals 
 
 build: tests lint format
 
+itests:
+	$(RUN_TESTS) ./integ_tests
+
 tests:
 	$(RUN_TESTS) ./test
 
