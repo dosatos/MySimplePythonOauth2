@@ -1,6 +1,6 @@
 CODE_DIR = ./src
 TEST_DIR = ./test
-RUN_TESTS = PYTHONPATH=$(CODE_DIR) poetry run pytest --verbosity=2 --showlocals --strict-markers
+RUN_TESTS = PYTHONPATH=$(CODE_DIR):$(TEST_DIR) poetry run pytest --verbosity=2 --showlocals --strict-markers
 
 build: tests lint format
 

@@ -1,4 +1,3 @@
-from dotenv import load_dotenv
 from pynamodb.exceptions import PutError
 
 from accounts.exceptions import InvalidCredentials, ResourceAlreadyExists
@@ -12,20 +11,6 @@ from accounts.models.api import (
 from accounts.models.database import User
 from auth_token.passwords import hash_password, validate_password
 from auth_token.token import TokenEncoder
-
-load_dotenv()
-
-with open('./jwt-key', encoding='utf-8') as fh:
-    PRIVATE_KEY = fh.read()
-
-with open('./jwt-key.pub', encoding='utf-8') as fh:
-    PUBLIC_KEY = fh.read()
-
-token_encoder = TokenEncoder(
-    algorithm='RS256',
-    encrypt_key=PRIVATE_KEY,
-    decrypt_key=PUBLIC_KEY,
-)
 
 
 def create(user: CreateUserRequest) -> CreateUserResponse:
@@ -43,7 +28,9 @@ def create(user: CreateUserRequest) -> CreateUserResponse:
     return CreateUserResponse(username=user.username)
 
 
-def login(credentials: LoginCredentialsRequest) -> LoginResponse:
+def login(
+    credentials: LoginCredentialsRequest, token_encoder: TokenEncoder
+) -> LoginResponse:
     user = User.get(credentials.username)
     if not validate_password(
         credentials.password.get_secret_value(), user.hashed_password
