@@ -1,10 +1,10 @@
 [tool.poetry]
-name = "oauth2-module"
+name = "MySimplePythonOauth2"
 version = "0.1.0"
 description = ""
 authors = ["Your Name <you@example.com>"]
 readme = "README.md"
-packages = [{include = "oauth2_module"}]
+packages = [{include = "MySimplePythonOauth2"}]
 
 [tool.poetry.dependencies]
 python = "^3.9"
