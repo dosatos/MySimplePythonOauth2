@@ -1,3 +1,4 @@
+from enum import Enum
 from typing import Dict, NamedTuple, Optional
 
 
@@ -11,3 +12,7 @@ class DecryptToken(NamedTuple):
     value: str
     algorithm: str
     decrypt_key: str
+
+
+class TokenType(Enum):
+    BEARER = 'bearer'
