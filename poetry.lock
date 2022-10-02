@@ -32,7 +32,7 @@ tests_no_zope = ["cloudpickle", "coverage[toml] (>=5.0.2)", "hypothesis", "mypy 
 name = "bcrypt"
 version = "4.0.0"
 description = "Modern password hashing for your software and your servers"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.6"
 
@@ -66,7 +66,7 @@ uvloop = ["uvloop (>=0.15.2)"]
 name = "cffi"
 version = "1.15.1"
 description = "Foreign Function Interface for Python calling C code."
-category = "main"
+category = "dev"
 optional = false
 python-versions = "*"
 
@@ -96,7 +96,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 name = "cryptography"
 version = "38.0.1"
 description = "cryptography is a package which provides cryptographic recipes and primitives to Python developers."
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.6"
 
@@ -214,7 +214,7 @@ pyparsing = ">=2.0.2,<3.0.5 || >3.0.5"
 name = "passlib"
 version = "1.7.4"
 description = "comprehensive password hashing framework supporting over 30 schemes"
-category = "main"
+category = "dev"
 optional = false
 python-versions = "*"
 
@@ -279,7 +279,7 @@ python-versions = ">=3.6"
 name = "pycparser"
 version = "2.21"
 description = "C parser in Python"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 
@@ -295,7 +295,7 @@ python-versions = ">=3.6"
 name = "PyJWT"
 version = "2.5.0"
 description = "JSON Web Token implementation in Python"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.7"
 
@@ -367,7 +367,7 @@ testing = ["argcomplete", "hypothesis (>=3.56)", "mock", "nose", "pygments (>=2.
 name = "python-dotenv"
 version = "0.21.0"
 description = "Read key-value pairs from a .env file and set them as environment variables"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.7"
 
@@ -394,7 +394,7 @@ python-versions = ">=3.6,<4.0"
 name = "types-cryptography"
 version = "3.3.23"
 description = "Typing stubs for cryptography"
-category = "main"
+category = "dev"
 optional = false
 python-versions = "*"
 
@@ -410,7 +410,7 @@ python-versions = ">=3.7"
 name = "unify"
 version = "0.5"
 description = "Modifies strings to all use the same (single/double) quote where possible."
-category = "main"
+category = "dev"
 optional = false
 python-versions = "*"
 
@@ -421,7 +421,7 @@ untokenize = "*"
 name = "untokenize"
 version = "0.1.1"
 description = "Transforms tokens into original source code (while preserving whitespace)."
-category = "main"
+category = "dev"
 optional = false
 python-versions = "*"
 
@@ -436,7 +436,7 @@ python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,>=2.7"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "47c7bcb7f1e1dafc311621f803407b6d23e4268296cf4dd90d2797219e2dedc4"
+content-hash = "59a0b8c8791737373aac17a6062e7b92acdcee3c7390cf787d2764923de06520"
 
 [metadata.files]
 astroid = [

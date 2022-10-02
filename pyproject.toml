@@ -8,10 +8,6 @@ packages = [{include = "MySimplePythonOauth2"}]
 
 [tool.poetry.dependencies]
 python = "^3.9"
-passlib = {extras = ["bcrypt"], version = "^1.7.4"}
-python-dotenv = "^0.21.0"
-PyJWT = {extras = ["crypto"], version = "^2.5.0"}
-unify = "^0.5"
 
 
 [tool.poetry.group.dev.dependencies]
@@ -21,6 +17,12 @@ isort = "^5.10.1"
 flake8 = "^5.0.4"
 mypy = "^0.971"
 pylint = "^2.15.3"
+unify = "^0.5"
+
+[tool.poetry.group.auth_token.dependencies]
+passlib = {extras = ["bcrypt"], version = "^1.7.4"}
+PyJWT = {extras = ["crypto"], version = "^2.5.0"}
+python-dotenv = "^0.21.0"
 
 [build-system]
 requires = ["poetry-core"]
