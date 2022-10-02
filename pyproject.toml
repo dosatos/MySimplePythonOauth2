@@ -24,6 +24,10 @@ passlib = {extras = ["bcrypt"], version = "^1.7.4"}
 PyJWT = {extras = ["crypto"], version = "^2.5.0"}
 python-dotenv = "^0.21.0"
 
+[tool.poetry.group.accounts.dependencies]
+pynamodb = "^5.2.1"
+pydantic = {extras = ["email"], version = "^1.10.2"}
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
