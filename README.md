@@ -3,7 +3,7 @@
 Install packages
 
 ```
-poetry install
+make init
 ```
 
 # To run integration tests

@@ -4,6 +4,9 @@ RUN_TESTS = PYTHONPATH=$(CODE_DIR):$(TEST_DIR) poetry run pytest --verbosity=2 -
 
 build: tests lint format
 
+init:
+	poetry install --no-root
+
 itests:
 	$(RUN_TESTS) ./integ_tests
 
