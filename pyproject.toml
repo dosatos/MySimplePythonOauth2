@@ -11,6 +11,7 @@ python = "^3.9"
 passlib = {extras = ["bcrypt"], version = "^1.7.4"}
 python-dotenv = "^0.21.0"
 PyJWT = {extras = ["crypto"], version = "^2.5.0"}
+unify = "^0.5"
 
 
 [tool.poetry.group.dev.dependencies]
@@ -19,6 +20,7 @@ black = "^22.8.0"
 isort = "^5.10.1"
 flake8 = "^5.0.4"
 mypy = "^0.971"
+pylint = "^2.15.3"
 
 [build-system]
 requires = ["poetry-core"]
