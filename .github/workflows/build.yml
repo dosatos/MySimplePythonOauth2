@@ -1,0 +1,23 @@
+name: Build Stage
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: [ push ]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v3
+      - name: Setup python version 3.9
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      - name: Install Dependencies
+        uses: snok/install-poetry@v1
+        run: |
+          poetry install
+          poetry install --with dev
+          poetry install --with auth_token
+          poetry install --with accounts
+      - name: Run make build
+        run: |
+          make build
